@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebapp   # must equal the Deployment name in base/deployment.yaml
+  name: mywebapp     # must equal the Deployment name in base/deployment.yaml
 spec:
   replicas: 3
