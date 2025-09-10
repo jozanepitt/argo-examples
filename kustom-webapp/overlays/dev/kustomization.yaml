@@ -1,9 +1,19 @@
-bases:
-- ../../base
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 
-patches:
- - replicas.yaml
+namespace: dev
+
+resources:
+  - ../../base
+
+# Use file-based patches via strategic-merge (fixes your earlier error)
+patchesStrategicMerge:
+  - replicas.yaml
 
 configMapGenerator:
-- name: mykustom-map
-  env: config.properties
+  - name: mykustom-map
+    env: config.properties
+
+# Optional, keeps the ConfigMap name stable while you learn
+generatorOptions:
+  disableNameSuffixHash: true
