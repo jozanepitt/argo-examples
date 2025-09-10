@@ -6,7 +6,6 @@ namespace: dev
 resources:
   - ../../base
 
-# Use file-based patches via strategic-merge (fixes your earlier error)
 patchesStrategicMerge:
   - replicas.yaml
 
@@ -14,6 +13,5 @@ configMapGenerator:
   - name: mykustom-map
     env: config.properties
 
-# Optional, keeps the ConfigMap name stable while you learn
 generatorOptions:
   disableNameSuffixHash: true
