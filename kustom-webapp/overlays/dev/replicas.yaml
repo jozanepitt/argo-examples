@@ -3,4 +3,4 @@ kind: Deployment
 metadata:
   name: mywebapp     # must equal the Deployment name in base/deployment.yaml
 spec:
-  replicas: 3
+  replicas: 2
